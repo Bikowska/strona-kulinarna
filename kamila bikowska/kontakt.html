@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Smaczny Kącik</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <a class="logo" href="index.html">🍃 Smaczny Kącik</a>
+    <nav>
+        <a href="index.html">Strona główna</a>
+        <a href="kategorie.html">Kategorie</a>
+        <a href="przepisy.html">Przepisy</a>
+        <a href="ciekawostki.html">Ciekawostki</a>
+        <a href="porady.html">Porady</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+</header>
+
+<main>
+    <section class="page-heading">
+        <p class="eyebrow">Napisz do nas</p>
+        <h1>Kontakt</h1>
+        <p>Masz pytanie dotyczące przepisu? Chcesz podzielić się pomysłem? Skontaktuj się z nami!</p>
+    </section>
+
+    <section class="section">
+        <div class="contact-layout">
+
+            <div class="contact-info">
+                <h2>Porozmawiajmy o gotowaniu!</h2>
+                <p>
+                    Chętnie poznamy Twoje kulinarne inspiracje,
+                    propozycje nowych przepisów i opinie o stronie.
+                </p>
+
+                <div class="notice">
+                    <strong>📧 Adres e-mail</strong>
+                    <p>Wpisz tutaj swój adres kontaktowy.</p>
+                    <p><em>Przed publikacją strony zastąp ten tekst właściwym adresem.</em></p>
+                </div>
+
+                <div class="notice">
+                    <strong>🍲 Masz pomysł na przepis?</strong>
+                    <p>Napisz do nas i podziel się swoją inspiracją!</p>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <h2>Formularz kontaktowy</h2>
+
+                <label for="name">Imię</label>
+                <input type="text" id="name" name="name"
+                       placeholder="Wpisz swoje imię" required>
+
+                <label for="email">Adres e-mail</label>
+                <input type="email" id="email" name="email"
+                       placeholder="Wpisz swój e-mail" required>
+
+                <label for="subject">Temat wiadomości</label>
+                <select id="subject" name="subject" required>
+                    <option value="">Wybierz temat</option>
+                    <option value="Przepis">Pytanie o przepis</option>
+                    <option value="Współpraca">Współpraca</option>
+                    <option value="Sugestia">Sugestia dotycząca strony</option>
+                    <option value="Inne">Inne</option>
+                </select>
+
+                <label for="message">Wiadomość</label>
+                <textarea id="message" name="message"
+                          placeholder="Napisz swoją wiadomość..."
+                          required></textarea>
+
+                <button class="button" type="submit">
+                    Wyślij wiadomość
+                </button>
+
+                <p id="formMessage" role="status" aria-live="polite"></p>
+            </form>
+
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Smaczny Kącik</p>
+</footer>
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        document.getElementById("formMessage").textContent =
+            "Formularz działa demonstracyjnie. Aby wysyłać wiadomości, podłącz obsługę formularza na serwerze.";
+
+        this.reset();
+    });
+</script>
+
+</body>
+</html>
